@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customizable Clock v7</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <meta name="apple-mobile-web-app-title" content="MyWebSite"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <script src="jquery-3.6.0.min.js">
+
+    </script>
+</head>
+
+<body onload="startTime();checkDate();weatherBalloon(5295903);" onkeypress="openSettings(event);" class="colorBG">
+<script src="script.js">
+
+</script>
+<div class="pixelshift">
+    <div id="clock" class="colorFont2">Loading...</div>
+    <div id="date" class="colorFont2">Loading...</div>
+    <div id="weather" class="colorFont2">Loading...</div>
+    <div id="schedule" class="colorFont2">Loading...</div>
+    <div id="message" class="colorFont2">
+        Press 'S' to open the settings menu.<br><br>
+        This site was made when I was still in high school (2021). It is so convoluted
+        to the point where I don't even know how some of these things work. This was written entirely using raw
+        HTML, CSS, and JS with the help of JQuery (yikes) and I still don't think I've topped this project in terms of
+        innovation and sheer ingenuity. I wrote this entire thing on a Chromebook in classes that I should've been
+        paying attention in, and I'm lucky to still have a version of this code. Many aspects of this code make no
+        sense; for example, the math for the automatic scroll speed, which just multiplies the length of the message by
+        0.07666098807, and the batshit insane style.css full of numbers like 49.6875vw and 0.20833333333333334vw. If I
+        were to remake it today it would be so much better although I still don't know how I got the scrolling message
+        to work so well. It still has a shit ton of issues (like the fact that the textbox parses raw HTML) so don't @
+        me.
+    </div>
+</div>
+<div id="settings">
+    <div id="windowHeader"><img id="closeSettings"
+                                src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjMDAwMDAwIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIiB2aWV3Qm94PSIwIDAgMjYuNDU4MzMzIDI2LjQ1ODMzNCIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwtMjcwLjU0MTY1KSI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMC4zMzA4Njg0NSwwLDAsLTAuMzMwODY4NDUsLTIyLjEwOTU4Niw0ODcuNTA3MTcpIiBzdHlsZT0iIiBzdHJva2Utd2lkdGg9IjEuMDY2MjE3NjYiPjxwYXRoIGQ9Im0gMTE3LjkwNTI0LDYxNS43NTkwOSAxNi42NTExMiwxNi42NTMyNSBjIDIuNDQwNTgsMi40NDE2NCAyLjQ0MDU4LDYuNDM3ODIgMCw4Ljg4MDUzIGwgLTIuMjE5ODYsMi4yMTc3MyBjIC0yLjQ0MjcxLDIuNDQ0ODQgLTYuNDM3ODIsMi40NDQ4NCAtOC44ODA1MywwIEwgMTA2LjgwNjk5LDYyNi44NTg0MSA5MC4xNTU4NjMsNjQzLjUxMDYgYyAtMi40NDE2MzksMi40NDE2NCAtNi40Mzc4MjIsMi40NDE2NCAtOC44Nzk0NiwwIGwgLTIuMjE5ODY1LC0yLjIxNzczIGMgLTIuNDQxNjM5LC0yLjQ0MjcxIC0yLjQ0MTYzOSwtNi40Mzg4OSAwLC04Ljg4MDUzIEwgOTUuNzA1NTI5LDYxNS43NjEyMiA3OS4wNTY1MzgsNTk5LjExMTE3IGMgLTIuNDQxNjM5LC0yLjQ0MTY0IC0yLjQ0MTYzOSwtNi40Mzg4OSAwLC04Ljg4MDUzIGwgMi4yMTk4NjUsLTIuMjE4OCBjIDIuNDQxNjM4LC0yLjQ0MTY0IDYuNDM3ODIxLC0yLjQ0MTY0IDguODc5NDYsMCBsIDE2LjY1MTEyNywxNi42NTExMiAxNi42NDg5OCwtMTYuNjUxMTIgYyAyLjQ0MjcxLC0yLjQ0MTY0IDYuNDM3ODIsLTIuNDQxNjQgOC44ODA1MywwIGwgMi4yMTk4NiwyLjIxODggYyAyLjQ0MDU4LDIuNDQxNjQgMi40NDA1OCw2LjQzODg5IDAsOC44ODA1MyB6IiBzdHlsZT0iIiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIj48L3BhdGg+PC9nPjwvZz48L3N2Zz4="
+                                class="black-red"
+                                onclick="document.getElementById('settings').style.display = 'none';"></img></div>
+    <form id="form" action="/display/" name="form">
+        <div id='MSG'>
+            <p id="title" class="colorFont">Custom Message</p>
+            <textarea name="msg" form="form" id="MSGcontent" placeholder="Message to Display..." required
+                      oninput="updateMSG()"></textarea>
+        </div>
+        <br><br>
+        <div id="SS">
+            <div class="slidecontainer">
+                <p id="title" class="colorFont">Scroll Speed (Seconds)</p>
+                <input type="range" min="1" max="301" value="15" class="slider" id="scrollSlider" onclick="aScroll()">
+                <input type="checkbox" id="autoScroll" onclick="aScroll()">
+                <label for="autoScroll">Automatic</label>
+            </div>
+        </div>
+        <br>
+        <div id="SCH">
+            <p id="title" class="colorFont">Schedule</p>
+            <input name="schedule" type="radio" id="SCHauto" value="auto" required checked
+                   onclick="setSchedule(this.value)">
+            <label for="SCHauto">Automatic</label><br>
+            <input name="schedule" type="radio" id="SCHregular" value="regular" onclick="setSchedule(this.value)">
+            <label for="SCHregular">Regular</label><br>
+            <input name="schedule" type="radio" id="SCHrst" value="rst" onclick="setSchedule(this.value)">
+            <label for="SCHrst">Wednesday RST</label><br>
+            <input name="schedule" type="radio" id="SCHhalf" value="half" onclick="setSchedule(this.value)">
+            <label for="SCHhalf">Half-Day</label><br>
+            <input name="schedule" type="radio" id="SCHassembly" value="assembly" onclick="setSchedule(this.value)">
+            <label for="SCHassembly">Assembly</label><br>
+        </div>
+        <br>
+        <div id="Colors">
+            <p id="title" class="colorFont">Colors</p>
+            <input type="color" id="bgColor" value="#16a085" oninput="colorChange('bg',this.value)">
+            <label for="bgColor">Background Color</p>
+                <input type="color" id="fontColor" value="#F0F0FF" oninput="colorChange('font',this.value)">
+                <label for="fontColor">Font Color</p>
+        </div>
+        <br>
+        <div id="OTHER">
+            <p id="title" class="colorFont">Other</p>
+            <input type="checkbox" id="OTRburnin" value="burnin" onchange="updatePixelShift(this)">
+            <label for="OTRburnin">Screen Burn-In Prevention</label>
+        </div>
+        <br>
+    </form>
+</div>
+<script>
+    $(document.getElementById("settings")).hide();
+    if (new Date().getDay() == 3) {
+        document.getElementById("schedule").innerHTML =
+            "A: 6:30-7:25<br>1: 7:30-8:09<br>2: 8:14-8:53<br>RST: 8:58-9:43<br>3: 9:48-10:27<br>4: 10:32-11:11<br>5: 11:16-11:54<br>6: 11:59-12:37<br>7: 12:42-1:20"
+    } else {
+        document.getElementById("schedule").innerHTML =
+            "A: 6:30-7:25<br>1: 7:30-8:24<br>2: 8:29-9:23<br>3: 9:28-10:24<br>4: 10:29-11:23<br>5: 11:28-12:22<br>6: 12:27-1:21<br>7: 1:26-2:20"
+    }
+</script>
+</body>
+
+</html>

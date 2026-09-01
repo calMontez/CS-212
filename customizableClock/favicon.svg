@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve" width="48" height="48"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="9.8581" y1="9.8581" x2="38.1419" y2="38.1419">
+		<stop offset="0" style="stop-color:#889097"></stop>
+		<stop offset="1" style="stop-color:#64717C"></stop>
+	</linearGradient>
+	<circle style="fill:url(#SVGID_1_);" cx="24" cy="24" r="20"></circle>
+</g><radialGradient id="SVGID_2_" cx="24" cy="24" r="18.5" gradientUnits="userSpaceOnUse">
+	<stop offset="0" style="stop-color:#000000"></stop>
+	<stop offset="1" style="stop-color:#000000;stop-opacity:0"></stop>
+</radialGradient><circle style="fill:url(#SVGID_2_);" cx="24" cy="24" r="18.5"></circle><g>
+	<radialGradient id="SVGID_3_" cx="23.8897" cy="7.3943" r="37.8834" gradientUnits="userSpaceOnUse">
+		<stop offset="0" style="stop-color:#FAFAFB"></stop>
+		<stop offset="1" style="stop-color:#C8CDD1"></stop>
+	</radialGradient>
+	<circle style="fill:url(#SVGID_3_);" cx="24" cy="24" r="17"></circle>
+</g><g>
+	
+		<line style="fill:none;stroke:#D83B01;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:10;" x1="24" y1="24" x2="24" y2="36"></line>
+</g><g>
+	
+		<line style="fill:none;stroke:#45494D;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:10;" x1="24" y1="24" x2="32.485" y2="15.515"></line>
+</g><g>
+	
+		<line style="fill:none;stroke:#45494D;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10;" x1="24" y1="24" x2="16.213" y2="20.265"></line>
+</g><circle style="fill:#1E2021;" cx="24" cy="24" r="2"></circle></svg>
