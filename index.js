@@ -7,7 +7,7 @@ async function fetchFolders() {
         const response = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents`);
         const data = await response.json();
 
-        listElement.innerHTML = ''; // Clear loading text
+        listElement.innerHTML = '';
 
         const folders = data.filter(item => item.type === 'dir' && !item.name.startsWith('.'));
 
