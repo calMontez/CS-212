@@ -1,9 +1,17 @@
+/*
+* This code is not gonna change from when it was incepted sometime back in 2021.
+* I am however gonna write a ton of comments making fun of my 16-year-old self.
+* */
+
 var dName = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// W unused variable
 var pixelshiftable = document.getElementsByClassName("pixelshift");
 var tOut;
 
+// Not gonna explain how but these next two functions being separate is so stupid.
+
 function checkDate() {
-    const today = new Date();
+    const today = new Date(); // Proof that I know when to use const sometimes
     let dM = today.getMonth();
     let dD = today.getDate();
     dM = dName[dM];
@@ -11,7 +19,7 @@ function checkDate() {
 }
 
 function startTime() {
-    const today = new Date();
+    const today = new Date(); // Again ?
     let h = today.getHours();
     let m = today.getMinutes();
     let s = today.getSeconds();
@@ -39,7 +47,7 @@ function startTime() {
 }
 
 function weatherBalloon(cityID) {
-    var key = 'dfa5e9fcb66a23d5e2caa40e40ba698d';
+    var key = 'dfa5e9fcb66a23d5e2caa40e40ba698d'; // Here's my public API key in case anyone needs it. Should've at least been a const.
     fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&appid=' + key)
         .then(function (resp) {
             return resp.json()
@@ -53,12 +61,12 @@ function weatherBalloon(cityID) {
 }
 
 function drawWeather(d) {
-    var fahrenheit = Math.round(((parseFloat(d.main.temp) - 273.15) * 1.8) + 32);
+    var fahrenheit = Math.round(((parseFloat(d.main.temp) - 273.15) * 1.8) + 32); // Not a const here...
     document.getElementById('weather').innerHTML = fahrenheit + '&deg;F';
 }
 
 function updateMSG() {
-    var obj = document.getElementById("MSGcontent").value
+    var obj = document.getElementById("MSGcontent").value // ...or here.
     if (obj != "") {
         obj = obj.replace(/\n\r?/g, '<br />');
         document.getElementById("message").innerHTML = obj
@@ -68,8 +76,11 @@ function updateMSG() {
 }
 
 function setSchedule(a) {
-    const today = new Date();
-    var x = today.getDay()
+    const today = new Date(); // Bro AGAIN !?
+    var x = today.getDay() // No semicolon is baller
+    /*
+    Holy shit this is terrible :sob:
+     */
     if (a == "auto") {
         if (x == 3) {
             document.getElementById("schedule").innerHTML = "A: 6:30-7:25<br>1: 7:30-8:09<br>2: 8:14-8:53<br>RST: 8:58-9:43<br>3: 9:48-10:27<br>4: 10:32-11:11<br>5: 11:16-11:54<br>6: 11:59-12:37<br>7: 12:42-1:20"
@@ -88,11 +99,11 @@ function setSchedule(a) {
 }
 
 function openSettings(event) {
-    var x = event.charCode;
+    var x = event.charCode; // I'm gonna stop pointing it out every time now.
     if (x == 115) {
         var y = document.getElementById("settings");
         if (y.style.display === "none") {
-            $(y).show();
+            $(y).show(); // Yoooo first usage of JQuery
         }
     }
 }
@@ -111,6 +122,10 @@ function aScroll() {
         sSlider.disabled = false;
     }
 }
+
+/*
+Jesus fucking christ...
+ */
 
 function pixelShift() {
     $(".pixelshift").animate({
